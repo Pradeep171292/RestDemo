@@ -44,16 +44,19 @@ public class AdminCRSDAOImpl implements AdminCRSDAO {
 	@Override
 	@Transactional
 	public void removeCourse(int id) {
-		String SQL = "delete from course where id = ?";
+		String SQL = "delete from course where courseId = ?";
 		jdbcTemplateObject.update(SQL, id);
 		System.out.println("Deleted Record with ID = " + id);
 		return;
 	}
 
 	@Override
-	public boolean approveStudentRegistration(Student student) {
+	public void approveStudentRegistration(int  studentId) {
 		// TODO Auto-generated method stub
-		return false;
+		String SQL = "update student set approved = true where id = ?";
+		jdbcTemplateObject.update(SQL, studentId);
+		System.out.println("Approved student with ID = " + studentId);
+		return ;
 	}
 
 	@Override

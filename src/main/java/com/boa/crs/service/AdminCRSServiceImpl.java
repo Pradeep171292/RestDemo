@@ -16,31 +16,23 @@ public class AdminCRSServiceImpl implements AdminCRSService {
 	
 
 	@Override
-	public void addCourse() {
+	public void addCourse(Course course) {
 		// TODO Auto-generated method stub
-		System.out.println("creating Course");
-		Course course = new Course();
-		course.setCourseName("Java");
-		course.setFees(5000.00);
 		adminCRSDao.addCourse(course);
-		Course course1 = new Course();
-		course1.setCourseName("Paython");
-		course1.setFees(4000.00);
-		adminCRSDao.addCourse(course1);
-		
 	}
 
 	@Override
-	public void removeCourse() {
+	public void removeCourse(int id) {
 		// TODO Auto-generated method stub
 		System.out.println("Remove Course");
-		adminCRSDao.removeCourse(2);
+		adminCRSDao.removeCourse(id);
 	}
 
 	@Override
-	public void approveStudentRegistration() {
+	public void approveStudentRegistration(int id) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Approve Student");
+		adminCRSDao.approveStudentRegistration(id);
 	}
 
 	@Override

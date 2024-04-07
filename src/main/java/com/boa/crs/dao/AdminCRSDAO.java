@@ -16,7 +16,7 @@ public interface AdminCRSDAO {
 	 public void addProfessor(Professor professor);
 	 public void addCourse(Course course);
 	 public void removeCourse(int id);
-	 public boolean approveStudentRegistration(Student student);
+	 public void approveStudentRegistration(int id);
 	 public void generateReport(int id);
 
 }
